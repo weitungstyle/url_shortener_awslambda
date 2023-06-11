@@ -1,0 +1,38 @@
+{% extends "base.html" %} {% block content %} {% if short_url %}
+<div class="alert alert-info" role="alert">
+    <h3 class="alert-heading">Success! Please use this link:</h3>
+    <a
+        href="https://6f33qn63ef.execute-api.ap-northeast-1.amazonaws.com/dev/{{short_url}}"
+        class="alert-link"
+        id="shortenUrl"
+        >https://6f33qn63ef.execute-api.ap-northeast-1.amazonaws.com/dev/{{short_url}}</a
+    >
+</div>
+<div class="text-center my-1">
+    <button class="btn btn-outline-success" onclick="copyUrl()">Copy</button>
+</div>
+
+{% else %}
+<form action="/dev/" method="POST" style="display: inline">
+    <div class="text-center my-3">
+        <!---use requried to prevent an empty input--->
+        <input
+            type="text"
+            style="
+                width: 100%;
+                background-color: rgb(193, 193, 193);
+                border: none;
+                padding: 10px;
+                border-radius: 10px;
+            "
+            placeholder="Paste your link here."
+            name="url"
+            required
+        />
+        <!---end here--->
+    </div>
+    <div class="text-center my-1">
+        <button class="btn btn-outline-primary" type="submit">Generate</button>
+    </div>
+</form>
+{% endif %} {% endblock %}
