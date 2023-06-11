@@ -4,7 +4,7 @@
 
 [AWS Link](https://6f33qn63ef.execute-api.ap-northeast-1.amazonaws.com/dev)
 
-![Sequence Diagram]()
+![Sequence Diagram](https://github.com/weitungstyle/url_shortener_awslambda/blob/main/public/Sequence%20Diagram.png)
 
 ### 功能描述
 
