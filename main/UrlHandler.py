@@ -29,4 +29,7 @@ class UrlHandler:
 
     def get(self, short_url):
         url = self.db.find_one(self.collection_name, {"short_url": short_url})
-        return url["original_url"]
+        if not url:
+            return None
+        else:
+            return url["original_url"]
